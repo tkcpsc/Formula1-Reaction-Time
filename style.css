@@ -41,3 +41,165 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+
+
+
+
+/*  my css */
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('fonts/digital_7/digital-7\ \(mono\).ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#countdown {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#reaction-timer {
+    font-size: 20px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-image: url('images/background1.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+.grid-light-container {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  width: 330px; 
+  height: 200px; 
+  overflow: hidden;
+}
+
+.grid-light-logo {
+  background-color: #1f1e1e;
+  text-align: center;
+  color: rgb(226, 25, 25);
+  flex: 0 0 60%; 
+  border-radius: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  letter-spacing: 1px;
+  padding: 10px;
+  line-height: 1;
+  overflow: hidden;
+}
+
+
+.grid-light-lights {
+  display: flex;
+  justify-content: space-around;
+  flex: 0 0 40%; 
+  margin: 0 10px;
+}
+
+.grid-light-lights-ol {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; 
+  background-color: black;
+  padding: 0 9px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.grid-light-lights-ol li {
+  width: 34px; 
+  height: 34px; 
+  background-color: rgb(85, 85, 85);
+  border-radius: 50%;
+  padding: 0;
+  margin: 2px 0;
+}
+
+
+#start-button {
+  position: absolute;
+  left: 49.3%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease;
+  height: auto; 
+  width: auto;
+}
+
+
+
+#start-button:hover {
+  transform: translateX(-50%) scale(1.1); 
+}
+.disabled {
+  pointer-events: none; 
+  opacity: 0.9; 
+  cursor: default; 
+}
+
+
+
+.screen-container {
+  position: absolute;
+  left: 49.3%;
+  bottom: 140px;
+  transform: translateX(-50%);
+  background-color: rgb(39, 41, 40);
+  height: 155px;
+  width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Digital-7', Verdana, Geneva, Tahoma, sans-serif; 
+  text-align: center;
+  font-size: 40px;
+  line-height: 1;
+}
+.screen-rpm-container ol{
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%; 
+  background-color: rgb(21, 21, 21);
+  padding: 0 9px;
+  margin-bottom: 10px;
+
+}
+.screen-rpm-light {
+  width: 17px; 
+  height: 17px; 
+  background-color: rgb(85, 85, 85);
+  border-radius: 50%;
+  padding: 10;
+  margin: 6px 5px;
+}
