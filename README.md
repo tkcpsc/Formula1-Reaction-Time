@@ -4,6 +4,8 @@
 
 "F1 Reaction Time" is a web application designed to test your reaction time, emulating the split-second decisions made by Formula One drivers. This app offers a fun and interactive way to measure and improve your reaction speed.
 
+![Preview of project](images/preview.png)
+
 ## Features
 
 - **Realistic F1 Grid Lights**: Experience the thrill of a Formula One start with a grid light system that mimics real-world race starts.
