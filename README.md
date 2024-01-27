@@ -35,3 +35,7 @@
 
 - Thomas Kudey
 - Marshall Longtin
+
+## Collaboration
+
+The development of "F1 Reaction Time" saw Thomas Kudey focused on the game logic and mechanics along with handling some of the styling while Marshall Longtin skillfully added edgecase handling and more to the app's styling. Together, our equal collaboration resulted in a user-friendly and visually appealing web application, effectively combining aesthetics with functionality.
