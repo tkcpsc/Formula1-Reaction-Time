@@ -88,7 +88,7 @@ function startTimer() {
         timerElement.textContent = (elapsedTime / 1000).toFixed(3);
         if (elapsedTime >= 20000) { // End game due to inactivity
             stopTimer();
-            errorCode = "no input detected after 20 seconds"
+            errorCode = "no input detected after 20 seconds";
         }
     }, 1);
 }
@@ -109,18 +109,18 @@ function waitForClick() {
     return new Promise((resolve) => {
         const listener = () => {
             document.removeEventListener('click', listener);
-            stopTimer()
+            stopTimer();
             resolve();
         };
         document.addEventListener('click', listener);
     });
 }
 function resetGridLights() {
-    setBackgroundColor(light1, 'rgb(85, 85, 85)')
-    setBackgroundColor(light2, 'rgb(85, 85, 85)')
-    setBackgroundColor(light3, 'rgb(85, 85, 85)')
-    setBackgroundColor(light4, 'rgb(85, 85, 85)')
-    setBackgroundColor(light5, 'rgb(85, 85, 85)')
+    setBackgroundColor(light1, 'rgb(85, 85, 85)');
+    setBackgroundColor(light2, 'rgb(85, 85, 85)');
+    setBackgroundColor(light3, 'rgb(85, 85, 85)');
+    setBackgroundColor(light4, 'rgb(85, 85, 85)');
+    setBackgroundColor(light5, 'rgb(85, 85, 85)');
 
 }
 
