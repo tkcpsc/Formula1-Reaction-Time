@@ -1,5 +1,12 @@
 # F1 Reaction Time Web App
 
+## Where to Play
+1. [CLICK ME TO PLAY](https://thomaskudey.com/Formula1-Reaction-Time/)
+2. https://thomaskudey.com >> scroll down to projects >> Click on Formula 1 Reaction Time project.
+3. https://thomaskudey.com/Formula1-Reaction-Time/
+4. Clone repository
+- ``` git clone https://github.com/tkcpsc/Formula1-Reaction-Time.git```
+
 ## Overview
 
 "F1 Reaction Time" is a web application designed to test your reaction time, emulating the split-second decisions made by Formula One drivers. This app offers a fun and interactive way to measure and improve your reaction speed.
