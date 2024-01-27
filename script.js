@@ -115,10 +115,20 @@ function waitForClick() {
         document.addEventListener('click', listener);
     });
 }
+function resetGridLights() {
+    setBackgroundColor(light1, 'rgb(85, 85, 85)')
+    setBackgroundColor(light2, 'rgb(85, 85, 85)')
+    setBackgroundColor(light3, 'rgb(85, 85, 85)')
+    setBackgroundColor(light4, 'rgb(85, 85, 85)')
+    setBackgroundColor(light5, 'rgb(85, 85, 85)')
+
+}
+
+
 
 // Async function for sequential execution, defined outside the event listener
 async function executeSequentially(startButton) {
-
+    errorCode = "";
     startButton.classList.add('disabled');
     // Define the click event listener function
     function handleClick() {
@@ -128,24 +138,33 @@ async function executeSequentially(startButton) {
     // Use setTimeout to defer the setup of the click listener
     setTimeout(() => {
         document.addEventListener('click', handleClick);
+
     }, 0);
+    
 
     // Sequentially Turns lights off with 1000ms (1 second) deplay between.
     debuggingCoefficient = 1; // Default is 1, increase game speed for debugging.
 
     setBackgroundColor(light1, "red");
     await delay(1000/debuggingCoefficient);
+    alert(errorCode);
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
         return;
     }
-
+    
     setBackgroundColor(light2, "red");
     await delay(1000/debuggingCoefficient);
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
         return;
     }
 
@@ -154,6 +173,9 @@ async function executeSequentially(startButton) {
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
         return;
     }
 
@@ -162,6 +184,9 @@ async function executeSequentially(startButton) {
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
         return;
     }
 
@@ -169,6 +194,17 @@ async function executeSequentially(startButton) {
     
     // Await random time between 1-3 seconds and then turns off lights.
     await delay((1000+(Math.random()*2000))/debuggingCoefficient);
+    await delay(1000/debuggingCoefficient);
+    if (errorCode === "Jumped Start" ) {
+        startButton.classList.remove('disabled');
+        errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
+        return;
+    }
+
+    errorCode = "";
     setBackgroundColor(light1, 'rgb(85, 85, 85)')
     setBackgroundColor(light2, 'rgb(85, 85, 85)')
     setBackgroundColor(light3, 'rgb(85, 85, 85)')
@@ -181,6 +217,9 @@ async function executeSequentially(startButton) {
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
+        resetGridLights();
+        stopTimer();
+        document.removeEventListener('click', handleClick);
         return;
     }
 
