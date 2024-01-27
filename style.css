@@ -81,16 +81,35 @@ body, html {
 }
 
 body {
-  background-image: url('images/background1.jpg'); 
-  background-position: center;
+  background-image: url('images/background1.jpg');
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
+.grid-lights {
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.grid-light-pole {
+  z-index: 1;
+  position: absolute;
+  top: 37px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background-color: #423e35;
+  border: 3px solid rgb(32, 29, 29);
+  z-index: 1;
+}
 
 
 .grid-light-container {
+  position: relative; 
+  z-index: 2; 
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -146,19 +165,18 @@ body {
 
 
 #start-button {
-  position: absolute;
-  left: 49.3%;
-  bottom: 10px;
-  transform: translateX(-50%);
+  position: fixed;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-55.5%);
   transition: transform 0.2s ease;
-  height: auto; 
-  width: auto;
+  margin: 0;
 }
 
 
 
 #start-button:hover {
-  transform: translateX(-50%) scale(1.1); 
+  transform: translateX(-55.5%) scale(1.1); 
 }
 .disabled {
   pointer-events: none; 
@@ -168,22 +186,42 @@ body {
 
 
 
-.screen-container {
+/* .screen-container {
   position: absolute;
-  left: 49.3%;
-  bottom: 140px;
-  transform: translateX(-50%);
+  left: 50%;
+  bottom: 15vh;
+  transform: translateX(-56%);
   background-color: rgb(39, 41, 40);
   height: 155px;
   width: 220px;
   border-radius: 10px;
   overflow: hidden;
   color: white;
-  font-family: 'Digital-7', Verdana, Geneva, Tahoma, sans-serif; 
+  font-family: 'Digital-7', Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   font-size: 40px;
   line-height: 1;
+} */
+
+.screen-container {
+  position: fixed;
+  left: 50%;
+  bottom: 35vh;
+  transform: translateX(-56%);
+  background-color: rgb(39, 41, 40);
+  width: 220px;
+  height: 155px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Digital-7', Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 40px;
+  line-height: 1;
+  background-color: rgba(39, 41, 40, 0.9);
 }
+
+
 .screen-rpm-container ol{
   list-style-type: none;
   margin: 0;

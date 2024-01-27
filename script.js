@@ -1,3 +1,66 @@
+
+/**
+ * Script.js
+ * 
+ * This file has stuling utility functions along with game logic
+ * 
+ */
+
+
+function adjustContainerPosition() {
+    const container = document.querySelector('.screen-container');
+    const startButton = document.querySelector('#start-button');
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Original size of the background image
+    const originalWidth = 1920; 
+    const originalHeight = 1080;
+
+    // Original dimensions of the container
+    const originalContainerWidth = 240;
+    const originalContainerHeight = 170;
+    const originalBottom = 155;
+
+    // Calculate the scale factor of the background image
+    const scaleWidth = viewportWidth / originalWidth;
+    const scaleHeight = viewportHeight / originalHeight;
+    const scale = Math.max(scaleWidth, scaleHeight);
+
+    // Scale the dimensions of the container
+    const newWidth = originalContainerWidth * scale;
+    const newHeight = originalContainerHeight * scale;
+    const newBottom = originalBottom * scale;
+
+    // Apply new dimensions and position
+    container.style.width = newWidth + 'px';
+    container.style.height = newHeight + 'px';
+    container.style.bottom = newBottom + 'px';
+
+    // Original dimensions of the button
+    const startOriginalButtonrWidth = 240;
+    const startOriginalButtonrHeight = 130;
+    const startOriginalBottom = -5;
+
+    // Scale the dimensions of the Button
+    const startNewWidth = startOriginalButtonrWidth * scale;
+    const startNewHeight = startOriginalButtonrHeight * scale;
+    const startNewBottom = startOriginalBottom * scale;
+
+    // Apply startNew dimensions and Button
+    startButton.style.width = startNewWidth + 'px';
+    startButton.style.height = startNewHeight + 'px';
+    startButton.style.bottom = startNewBottom + 'px';
+
+}
+
+// Adjust the position and size on load and on resize
+window.addEventListener('load', adjustContainerPosition);
+window.addEventListener('resize', adjustContainerPosition);
+
+
+
+
 // Declare & initialize grid light classes.
 let iterations = 0;
 let startBtnClick = document.getElementById("start-button");
@@ -23,7 +86,7 @@ function startTimer() {
     timerInterval = setInterval(function() {
         let elapsedTime = Date.now() - startTime;
         timerElement.textContent = (elapsedTime / 1000).toFixed(3);
-        if (elapsedTime >= 20000) { // Check if 20 seconds have passed
+        if (elapsedTime >= 20000) { // End game due to inactivity
             stopTimer();
             errorCode = "no input detected after 20 seconds"
         }
@@ -60,7 +123,6 @@ async function executeSequentially(startButton) {
     // Define the click event listener function
     function handleClick() {
         errorCode = "Jumped Start";
-        // alert("Jumped start");
     }
 
     // Use setTimeout to defer the setup of the click listener
@@ -68,8 +130,8 @@ async function executeSequentially(startButton) {
         document.addEventListener('click', handleClick);
     }, 0);
 
-    // Sequentially Turns lights off with 1000ms deplay between.
-    debuggingCoefficient = 1; // Default is 1
+    // Sequentially Turns lights off with 1000ms (1 second) deplay between.
+    debuggingCoefficient = 1; // Default is 1, increase game speed for debugging.
 
     setBackgroundColor(light1, "red");
     await delay(1000/debuggingCoefficient);
@@ -142,4 +204,5 @@ startBtnClick.addEventListener("click", async function() {
     await executeSequentially(this);
     console.log(errorCode);
 });
+
 
