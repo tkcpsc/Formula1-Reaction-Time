@@ -147,7 +147,6 @@ async function executeSequentially(startButton) {
 
     setBackgroundColor(light1, "red");
     await delay(1000/debuggingCoefficient);
-    alert(errorCode);
     if (errorCode === "Jumped Start" ) {
         startButton.classList.remove('disabled');
         errorCode = "";
